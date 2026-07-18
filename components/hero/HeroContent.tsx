@@ -22,7 +22,7 @@ const item = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 1.1
     },
   },
 };
@@ -34,7 +34,19 @@ export default function HeroContent() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="max-w-3xl text-center text-white"
+        className="
+         max-w-3xl
+         rounded-3xl
+        border
+        border-white/15
+        bg-white/10
+        backdrop-blur-md
+        px-10
+         py-14
+        text-center
+         text-white
+         shadow-2xl
+        "
       >
         <motion.p
           variants={item}
@@ -45,19 +57,35 @@ export default function HeroContent() {
 
         <motion.h1
           variants={item}
-          className="mt-8 text-6xl md:text-8xl font-light"
+          className="
+            mt-8
+            text-6xl
+             md:text-8xl
+             font-extralight
+             tracking-wide
+             leading-tight
+            "
         >
           {wedding.couple.groom} & {wedding.couple.bride}
         </motion.h1>
 
         <motion.div
           variants={item}
-          className="mx-auto mt-8 h-[2px] w-24 bg-[#D4B483]"
+          className="
+        mx-auto
+        mt-10
+        h-px
+        w-32
+        bg-gradient-to-r
+        from-transparent
+        via-[#D4B483]
+        to-transparent
+        "
         />
 
         <motion.p
           variants={item}
-          className="mt-8 text-xl text-white/90"
+          className="mt-10 text-xl text-white/90"
         >
           {wedding.hero.tagline}
           <br />
