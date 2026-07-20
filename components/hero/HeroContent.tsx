@@ -22,7 +22,7 @@ const item = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.1
+      duration: 1.1,
     },
   },
 };
@@ -38,8 +38,8 @@ export default function HeroContent() {
          max-w-3xl
          rounded-3xl
         border
-        border-white/15
-        bg-white/10
+        border-white/10
+        bg-white/8
         backdrop-blur-md
         px-10
          py-14
@@ -83,22 +83,17 @@ export default function HeroContent() {
         "
         />
 
-        <motion.p
-          variants={item}
-          className="mt-10 text-xl text-white/90"
-        >
+        <motion.p variants={item} className="mt-10 text-xl text-white/90">
           {wedding.hero.tagline}
           <br />
           {wedding.hero.subtitle}
         </motion.p>
 
-        <motion.div
-          variants={item}
-          className="mt-10 space-y-2 text-white/80"
-        >
+        <motion.div variants={item} className="mt-10 space-y-2 text-white/80">
           <p>{wedding.wedding.date}</p>
           <p>{wedding.wedding.time}</p>
-          <p>{wedding.venues.ceremony}</p>
+          <p>{wedding.venue.ceremony.place}</p>
+          <p>{wedding.venue.ceremony.address}</p>
         </motion.div>
 
         <motion.div variants={item}>
