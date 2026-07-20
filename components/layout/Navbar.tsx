@@ -24,25 +24,52 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`
+    <div
+      className="
         fixed
-        top-0
+        top-6
         left-0
+        right-0
         z-50
-        w-full
-        transition-all
-        duration-500
-
-        ${
-          scrolled ? "bg-white/70 backdrop-blur-xl shadow-lg" : "bg-transparent"
-        }
-      `}
+        flex
+        justify-center
+        pointer-events-none
+        "
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-8">
+      <div
+        className={`
+    pointer-events-auto
+    flex
+    h-16
+    w-[92%]
+    max-w-5xl
+    items-center
+    justify-between
+    rounded-full
+    px-8
+    transition-all
+    duration-500
+
+    ${
+      scrolled
+        ? `
+          border
+          border-[var(--color-border)]
+          bg-white/70
+          backdrop-blur-2xl
+          shadow-[var(--shadow-soft)]
+        `
+        : `
+          bg-transparent
+        `
+    }
+  `}
+      >
         <h1
           className={`
-            text-xl
+            text-2xl
+            font-light
+            font-heading
             tracking-[0.4em]
             transition-colors
             duration-500
@@ -63,9 +90,9 @@ export default function Navbar() {
                 tracking-[0.2em]
                 transition-all
                 duration-300
-                hover:text-[#D4B483]
+                hover:text-[var(--color-champagne)]
 
-                ${scrolled ? "text-gray-700" : "text-white"}
+                ${scrolled ? "text-[var(--color-text)]" : "text-white"}
               `}
             >
               {link.title}
@@ -73,6 +100,6 @@ export default function Navbar() {
           ))}
         </nav>
       </div>
-    </header>
+    </div>
   );
 }
