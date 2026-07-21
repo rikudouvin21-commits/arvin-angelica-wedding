@@ -65,4 +65,4 @@ export const wedding = {
       },
     ],
   },
-};
+} as const;
