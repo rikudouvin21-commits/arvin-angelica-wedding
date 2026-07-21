@@ -1,58 +1,44 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { wedding } from "@/data/wedding";
+import TimelineItem from "./TimelineItem";
 
 export default function Timeline() {
   return (
     <section
       id="timeline"
-      className="bg-white py-32 px-6"
+      className="
+        relative
+        bg-white
+        px-6
+        py-24
+      "
     >
-      <div className="mx-auto max-w-5xl">
-        <h2 className="text-center text-5xl font-serif">
-          Our Journey
-        </h2>
+      <div className="mx-auto max-w-4xl">
+        <div
+          className="
+            absolute
+            left-1/2
+            top-40
+            bottom-24
+            hidden
+            w-px
+            -translate-x-1/2
+            bg-[var(--color-border)]
+            md:block
+          "
+        />
 
-        <div className="mt-20 space-y-16">
-          {wedding.timeline.map((event, index) => (
-            <motion.div
-              key={event.year}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.2,
-              }}
-              className="flex items-start gap-8"
-            >
-              <div className="w-28 text-right">
-                <p className="text-2xl font-semibold text-[#D4B483]">
-                  {event.year}
-                </p>
-              </div>
-
-              <div className="w-px self-stretch bg-[#D4B483]" />
-
-              <div className="flex-1">
-                <h3 className="text-2xl font-semibold">
-                  {event.title}
-                </h3>
-
-                <p className="mt-3 text-gray-600">
-                  {event.description}
-                </p>
-              </div>
-            </motion.div>
+        <div className="space-y-24">
+          {wedding.story.timeline.map((event, index) => (
+            <TimelineItem
+              key={event.date}
+              date={event.date}
+              title={event.title}
+              description={event.description}
+              icon={event.icon}
+              delay={index * 0.15}
+            />
           ))}
         </div>
       </div>

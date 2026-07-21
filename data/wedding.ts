@@ -28,37 +28,41 @@ export const wedding = {
   },
 
   hero: {
-    tagline: "A Promise Made.",
-    subtitle: "A Forever To Begin.",
+    invitation: "Together with our families",
+    message: "joyfully invite you to celebrate",
+    promise: "the beginning of our forever.",
   },
 
   story: {
-    title: "Our Story",
+    heading: "FIVE YEARS IN THE MAKING",
+    subtitle: "Every love story has a beginning. Here's ours.",
 
-    intro: "Every great love story begins with a single hello.",
-
-    body: "This is where we will share our journey—from our first meeting, to our first date, to the proposal, and finally to the day we become husband and wife.",
+    timeline: [
+      {
+        date: "February 2022",
+        icon: "circle",
+        title: "Two paths crossed.",
+        description: "A chance meeting that changed everything.",
+      },
+      {
+        date: "June 2022",
+        icon: "circle",
+        title: "We made it official.",
+        description: "From best friends to partners in crime.",
+      },
+      {
+        date: "May 2026",
+        icon: "sparkle",
+        title: "He asked... and She said YES!",
+        description: "On a perfect day in May, we promised forever.",
+      },
+      {
+        date: "September 2027",
+        icon: "heart",
+        title: "The best is yet to come.",
+        description:
+          'Join us as we say "I do" and start our greatest chapter yet.',
+      },
+    ],
   },
-  timeline: [
-    {
-      year: "2019",
-      title: "First Meeting",
-      description: "The day our story began.",
-    },
-    {
-      year: "2021",
-      title: "First Date",
-      description: "The beginning of countless memories together.",
-    },
-    {
-      year: "2026",
-      title: "The Proposal",
-      description: "A promise of forever.",
-    },
-    {
-      year: "2027",
-      title: "Our Wedding Day",
-      description: "The next chapter begins.",
-    },
-  ],
 };

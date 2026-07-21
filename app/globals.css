@@ -3,22 +3,23 @@
 :root {
   /* Backgrounds */
   --color-background: #f8f6f2;
-  --color-surface: #ffffff;
-  --color-surface-alt: #fffcf8;
+  --color-paper: #fcfaf7;
+  --color-card: #ffffff;
+  --color-card-alt: #fffdfc;
 
   /* Brand */
-  --color-gold: #d4b483;
-  --color-champagne: #f5d08a;
+  --color-gold: #c89b47;
+  --color-champagne: #eed7ae;
   --color-border: #e7dac5;
 
   /* Text */
-  --color-text: #2f2f2f;
-  --color-text-light: #7c746b;
+  --color-text: #2e2b28;
+  --color-text-light: #6d655d;
   --color-white: #ffffff;
 
   /* Shadows */
   --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.08);
-  --shadow-large: 0 25px 60px rgba(0, 0, 0, 0.12);
+  --shadow-large: 0 30px 80px rgba(0, 0, 0, 0.12);
 
   /* Radius */
   --radius-large: 28px;

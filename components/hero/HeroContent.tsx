@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import HeroButton from "./HeroButton";
 import { wedding } from "@/data/wedding";
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -13,7 +13,7 @@ const container = {
   },
 };
 
-const item = {
+const item: Variants = {
   hidden: {
     opacity: 0,
     y: 20,
@@ -23,6 +23,7 @@ const item = {
     y: 0,
     transition: {
       duration: 1.1,
+      ease: "easeOut",
     },
   },
 };
@@ -35,19 +36,19 @@ export default function HeroContent() {
         initial="hidden"
         animate="show"
         className="
-          w-full
-          max-w-2xl
-          rounded-[32px]
-          border
-          border-white/15
-          bg-white/10
-          backdrop-blur-xl
-          px-8
-          py-12
-          text-center
-          text-white
-          shadow-[0_25px_80px_rgba(0,0,0,0.18)]
-        "
+        mx-auto
+        w-full
+        max-w-xl
+        rounded-[28px]
+        border
+        border-[var(--color-border)]
+        bg-[var(--color-paper)]
+        px-10
+        py-11
+        text-center
+        shadow-[0_30px_80px_rgba(0,0,0,0.12)]
+        backdrop-blur-sm
+      "
       >
         <motion.p
           variants={item}
@@ -55,9 +56,9 @@ export default function HeroContent() {
             uppercase
             tracking-[0.7em]
             text-xs
+            font-semibold
             text-[#C89B47]
-            font-medium
-        "
+          "
         >
           A & A
         </motion.p>
@@ -65,14 +66,13 @@ export default function HeroContent() {
         <motion.h1
           variants={item}
           className="
-            mt-8
+            mt-6
             text-5xl
             md:text-7xl
-            font-light
-            tracking-[0.02em]
-            leading-[1.15]
-            text-[#FAF8F5]
-            drop-shadow-[0_3px_20px_rgba(0,0,0,0.18)]
+            font-semibold
+            leading-tight
+            tracking-normal
+            text-[#2E2B28]
           "
         >
           {wedding.couple.groom} & {wedding.couple.bride}
@@ -81,41 +81,38 @@ export default function HeroContent() {
         <motion.div
           variants={item}
           className="
-        mx-auto
-        mt-10
-        h-[2px]
-        w-32
-        bg-gradient-to-r
-        from-transparent
-        via-[#C89B47]
-        to-transparent
-        "
+            mx-auto
+            mt-8
+            h-px
+            w-24
+            bg-[#D9C5A0]
+          "
         />
-
-        <motion.p
-          variants={item}
-          className="
-          mt-10
-          text-xl
-          leading-8
-          text-white/88
-          drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)]
-        "
-        >
-          {wedding.hero.tagline}
-          <br />
-          {wedding.hero.subtitle}
-        </motion.p>
 
         <motion.div
           variants={item}
           className="
-          mt-10
-          space-y-3
-          text-white/82
-          tracking-wide
-          text-[17px]
-        "
+    mt-8
+    text-lg
+    leading-8
+    text-[#6D655D]
+  "
+        >
+          <p>{wedding.hero.invitation}</p>
+
+          <p className="mt-2">{wedding.hero.message}</p>
+
+          <p className="mt-2 italic">{wedding.hero.promise}</p>
+        </motion.div>
+
+        <motion.div
+          className="
+            mt-10
+            space-y-2
+            text-[#4E4740]
+            tracking-wide
+            text-base
+          "
         >
           <p>{wedding.wedding.date}</p>
           <p>{wedding.wedding.time}</p>
