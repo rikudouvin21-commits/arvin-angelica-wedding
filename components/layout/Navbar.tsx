@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import useActiveSection from "@/hooks/useActiveSection";
 
 const links = [
   { title: "Home", href: "#" },
@@ -12,7 +13,7 @@ const links = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-
+  const { activeSection } = useActiveSection();
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -85,17 +86,36 @@ export default function Navbar() {
               key={link.title}
               href={link.href}
               className={`
+                relative
                 uppercase
                 text-sm
-                tracking-[0.2em]
+                tracking-[0.22em]
+                pb-2
                 transition-all
                 duration-300
-                hover:text-[var(--color-champagne)]
 
-                ${scrolled ? "text-[var(--color-text)]" : "text-white"}
-              `}
+                ${
+                  activeSection === link.href.replace("#", "")
+                    ? "text-[#D4B483] font-medium"
+                    : scrolled
+                      ? "text-gray-700 hover:text-[#D4B483]"
+                      : "text-white hover:text-[#F5D08A]"
+                }
+            `}
             >
               {link.title}
+              <span
+                className={`
+                    absolute
+                    left-0
+                    -bottom-1
+                    h-[2px]
+                    bg-[#D4B483]
+                    transition-all
+                    duration-300
+                ${activeSection === link.href.replace("#", "") ? "w-full" : "w-0"}
+                `}
+              />
             </Link>
           ))}
         </nav>

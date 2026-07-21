@@ -29,28 +29,35 @@ const item = {
 
 export default function HeroContent() {
   return (
-    <div className="relative z-10 flex min-h-screen items-center justify-center px-6">
+    <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24">
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="
-         max-w-3xl
-         rounded-3xl
-        border
-        border-white/10
-        bg-white/8
-        backdrop-blur-md
-        px-10
-         py-14
-        text-center
-         text-white
-         shadow-2xl
+          w-full
+          max-w-2xl
+          rounded-[32px]
+          border
+          border-white/15
+          bg-white/10
+          backdrop-blur-xl
+          px-8
+          py-12
+          text-center
+          text-white
+          shadow-[0_25px_80px_rgba(0,0,0,0.18)]
         "
       >
         <motion.p
           variants={item}
-          className="uppercase tracking-[0.6em] text-sm text-[#F5D08A]"
+          className="
+            uppercase
+            tracking-[0.7em]
+            text-xs
+            text-[#C89B47]
+            font-medium
+        "
         >
           A & A
         </motion.p>
@@ -59,12 +66,14 @@ export default function HeroContent() {
           variants={item}
           className="
             mt-8
-            text-6xl
-             md:text-8xl
-             font-extralight
-             tracking-wide
-             leading-tight
-            "
+            text-5xl
+            md:text-7xl
+            font-light
+            tracking-[0.02em]
+            leading-[1.15]
+            text-[#FAF8F5]
+            drop-shadow-[0_3px_20px_rgba(0,0,0,0.18)]
+          "
         >
           {wedding.couple.groom} & {wedding.couple.bride}
         </motion.h1>
@@ -74,22 +83,40 @@ export default function HeroContent() {
           className="
         mx-auto
         mt-10
-        h-px
+        h-[2px]
         w-32
         bg-gradient-to-r
         from-transparent
-        via-[#D4B483]
+        via-[#C89B47]
         to-transparent
         "
         />
 
-        <motion.p variants={item} className="mt-10 text-xl text-white/90">
+        <motion.p
+          variants={item}
+          className="
+          mt-10
+          text-xl
+          leading-8
+          text-white/88
+          drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)]
+        "
+        >
           {wedding.hero.tagline}
           <br />
           {wedding.hero.subtitle}
         </motion.p>
 
-        <motion.div variants={item} className="mt-10 space-y-2 text-white/80">
+        <motion.div
+          variants={item}
+          className="
+          mt-10
+          space-y-3
+          text-white/82
+          tracking-wide
+          text-[17px]
+        "
+        >
           <p>{wedding.wedding.date}</p>
           <p>{wedding.wedding.time}</p>
           <p>{wedding.venue.ceremony.place}</p>
