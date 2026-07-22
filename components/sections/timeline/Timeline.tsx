@@ -19,12 +19,15 @@ export default function Timeline() {
           className="
             absolute
             left-1/2
-            top-40
-            bottom-24
+            top-24
+            bottom-20
             hidden
             w-px
             -translate-x-1/2
-            bg-[var(--color-border)]
+            bg-gradient-to-b
+            from-transparent
+            via-[#D9C5A0]
+            to-transparent
             md:block
           "
         />

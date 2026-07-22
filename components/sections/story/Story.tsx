@@ -15,6 +15,7 @@ export default function Story() {
     >
       <div className="mx-auto max-w-4xl">
         <SectionTitle
+          eyebrow="Our Story"
           title={wedding.story.heading}
           subtitle={wedding.story.subtitle}
         />

@@ -12,16 +12,20 @@ export const wedding = {
   venue: {
     ceremony: {
       title: "Ceremony",
+      icon: "church",
       place: "Our Lady of Mount Carmel",
       address: "Quezon City",
+      date: "Saturday, September 25, 2027",
       time: "2:00 PM",
       map: "https://maps.google.com",
     },
 
     reception: {
       title: "Reception",
-      place: "To Be Announced",
-      address: "Coming Soon",
+      icon: "champagne",
+      place: "Matrix Events Place",
+      address: "Quezon City",
+      date: "Saturday, September 25, 2027",
       time: "5:00 PM",
       map: "https://maps.google.com",
     },

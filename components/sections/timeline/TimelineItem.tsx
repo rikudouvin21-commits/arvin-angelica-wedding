@@ -40,7 +40,7 @@ export default function TimelineItem({
     >
       <TimelineIcon icon={icon} />
 
-      <div className="mt-6 max-w-md">
+      <div className="mt-8 max-w-md">
         <p
           className="
             uppercase
@@ -56,7 +56,7 @@ export default function TimelineItem({
         <h3
           className="
             mt-3
-            text-3xl
+            text-4xl
             font-semibold
             text-[var(--color-text)]
           "
@@ -66,9 +66,9 @@ export default function TimelineItem({
 
         <p
           className="
-            mt-4
+            mt-5
             text-lg
-            leading-8
+            leading-9
             text-[var(--color-text-light)]
           "
         >
