@@ -1,4 +1,4 @@
-import SectionTitle from "@/components/ui/SectionTitle";
+import SectionTitle from "@/components/common/SectionTitle";
 import { wedding } from "@/data/wedding";
 
 export default function Story() {

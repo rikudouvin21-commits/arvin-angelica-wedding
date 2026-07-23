@@ -11,6 +11,7 @@ export default function VenueButton({ href }: VenueButtonProps) {
       className="
         inline-flex
         items-center
+        justify-center
         gap-2
         rounded-full
         border
@@ -26,7 +27,7 @@ export default function VenueButton({ href }: VenueButtonProps) {
         hover:text-white
       "
     >
-      📍 View Location
+      View Location
     </a>
   );
 }
