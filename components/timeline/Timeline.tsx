@@ -2,6 +2,7 @@
 
 import { wedding } from "@/data/wedding";
 import TimelineItem from "./TimelineItem";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function Timeline() {
   return (
@@ -34,14 +35,15 @@ export default function Timeline() {
 
         <div className="space-y-24">
           {wedding.timeline.map((event, index) => (
-            <TimelineItem
-              key={event.date}
-              date={event.date}
-              title={event.title}
-              description={event.description}
-              icon={event.icon}
-              delay={index * 0.15}
-            />
+            <FadeIn key={event.date} delay={index * 0.15}>
+              <TimelineItem
+                date={event.date}
+                title={event.title}
+                description={event.description}
+                icon={event.icon}
+                delay={index * 0.15}
+              />
+            </FadeIn>
           ))}
         </div>
       </div>

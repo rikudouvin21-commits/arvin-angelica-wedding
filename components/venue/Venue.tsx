@@ -2,6 +2,7 @@ import SectionTitle from "@/components/common/SectionTitle";
 import VenueCard from "./VenueCard";
 import { Church, PartyPopper } from "lucide-react";
 import { wedding } from "@/data/wedding";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function Venue() {
   return (
@@ -28,25 +29,29 @@ export default function Venue() {
             lg:grid-cols-2
           "
         >
-          <VenueCard
-            title={wedding.venue.ceremony.title}
-            place={wedding.venue.ceremony.place}
-            address={wedding.venue.ceremony.address}
-            date={wedding.venue.ceremony.date}
-            time={wedding.venue.ceremony.time}
-            map={wedding.venue.ceremony.map}
-            icon={<Church size={42} strokeWidth={1.5} />}
-          />
+          <FadeIn delay={0.2}>
+            <VenueCard
+              title={wedding.venue.ceremony.title}
+              place={wedding.venue.ceremony.place}
+              address={wedding.venue.ceremony.address}
+              date={wedding.venue.ceremony.date}
+              time={wedding.venue.ceremony.time}
+              map={wedding.venue.ceremony.map}
+              icon={<Church size={42} strokeWidth={1.5} />}
+            />
+          </FadeIn>
 
-          <VenueCard
-            title={wedding.venue.reception.title}
-            place={wedding.venue.reception.place}
-            address={wedding.venue.reception.address}
-            date={wedding.venue.reception.date}
-            time={wedding.venue.reception.time}
-            map={wedding.venue.reception.map}
-            icon={<PartyPopper size={42} strokeWidth={1.5} />}
-          />
+          <FadeIn delay={0.35}>
+            <VenueCard
+              title={wedding.venue.reception.title}
+              place={wedding.venue.reception.place}
+              address={wedding.venue.reception.address}
+              date={wedding.venue.reception.date}
+              time={wedding.venue.reception.time}
+              map={wedding.venue.reception.map}
+              icon={<PartyPopper size={42} strokeWidth={1.5} />}
+            />
+          </FadeIn>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import SectionTitle from "@/components/common/SectionTitle";
 import { wedding } from "@/data/wedding";
+import FadeIn from "@/components/animations/FadeIn";
 
 export default function Story() {
   return (
@@ -14,11 +15,13 @@ export default function Story() {
       "
     >
       <div className="mx-auto max-w-4xl">
-        <SectionTitle
-          eyebrow="Our Story"
-          title={wedding.story.heading}
-          subtitle={wedding.story.subtitle}
-        />
+        <FadeIn>
+          <SectionTitle
+            eyebrow="Our Story"
+            title={wedding.story.heading}
+            subtitle={wedding.story.subtitle}
+          />
+        </FadeIn>
       </div>
     </section>
   );

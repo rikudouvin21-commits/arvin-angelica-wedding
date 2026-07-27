@@ -2,21 +2,21 @@
 
 :root {
   /* ==========================================================
-     COLORS
+     FOUNDATIONS — COLORS
   ========================================================== */
 
   /* Backgrounds */
-  --color-background: #f8f6f2;
-  --color-paper: #fcfaf7;
+  --color-background: #f7f4ef;
+  --color-paper: #fffefc;
   --color-card: #ffffff;
   --color-card-alt: #fffdfc;
 
   /* Brand */
-  --color-gold: #c89b47;
+  --color-gold: #b88a44;
   --color-champagne: #eed7ae;
 
   /* UI */
-  --color-border: #e7dac5;
+  --color-border: #ded0ba;
 
   /* Text */
   --color-text: #2e2b28;
@@ -24,11 +24,37 @@
   --color-white: #ffffff;
 
   /* ==========================================================
+     GRADIENTS
+  ========================================================== */
+
+  --gradient-gold: linear-gradient(
+    90deg,
+    transparent,
+    rgba(184, 138, 68, 0.7),
+    transparent
+  );
+
+  /* ==========================================================
+     TYPOGRAPHY
+  ========================================================== */
+
+  --font-display-size: 5.8rem;
+  --font-title-size: 3.75rem;
+  --font-heading-size: 2.5rem;
+  --font-body-size: 1rem;
+  --font-small-size: 0.875rem;
+
+  --line-display: 1;
+  --line-heading: 1.2;
+  --line-body: 1.8;
+
+  /* ==========================================================
      SHADOWS
   ========================================================== */
 
-  --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.08);
-  --shadow-large: 0 30px 80px rgba(0, 0, 0, 0.12);
+  --shadow-soft: 0 16px 40px rgba(28, 22, 15, 0.08);
+  --shadow-large: 0 40px 100px rgba(28, 22, 15, 0.12);
+  --shadow-floating: 0 50px 120px rgba(28, 22, 15, 0.14);
 
   /* ==========================================================
      RADIUS
@@ -37,14 +63,17 @@
   --radius-large: 28px;
 
   /* ==========================================================
+     SPACING
+  ========================================================== */
+
+  --space-section: 8rem;
+  --space-section-large: 10rem;
+
+  /* ==========================================================
      LAYOUT
   ========================================================== */
 
-  --section-padding: 120px;
-
   --container-width: 1280px;
-
-  /* Optional for future */
   --container-narrow: 960px;
 
   /* ==========================================================
@@ -52,12 +81,34 @@
   ========================================================== */
 
   --navbar-height: 88px;
+  --navbar-blur: blur(18px);
 
   /* ==========================================================
-     TRANSITIONS
+     LAYERS
+  ========================================================== */
+
+  --z-navbar: 100;
+  --z-overlay: 500;
+  --z-opening: 999;
+
+  /* ==========================================================
+     MOTION
   ========================================================== */
 
   --transition: all 0.35s ease;
+
+  --duration-fast: 0.25s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.8s;
+
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-luxury: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  /* ==========================================================
+     FUTURE
+  ========================================================== */
+
+  --paper-noise: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
 }
 
 /* ==========================================================

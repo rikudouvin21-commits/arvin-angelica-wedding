@@ -66,14 +66,12 @@ export default function HeroContent() {
         <motion.h1
           variants={item}
           className="
-            mt-6
             text-6xl
-            md:text-8xl
+            md:text-[5.8rem]
             font-light
             leading-none
-            tracking-wide
             text-[var(--color-text)]
-        "
+          "
         >
           <span className="block">{wedding.couple.groom}</span>
 
