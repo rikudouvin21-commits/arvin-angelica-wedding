@@ -1,0 +1,5 @@
+formatDate();
+
+scrollToSection();
+
+calculateCountdown();

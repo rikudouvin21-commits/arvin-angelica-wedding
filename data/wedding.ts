@@ -68,4 +68,23 @@ export const wedding = {
       },
     ],
   },
+
+  gallery: [
+    {
+      image: "/gallery/photo1.jpg",
+      alt: "Arvin and Angelica",
+    },
+    {
+      image: "/gallery/photo2.jpg",
+      alt: "Arvin and Angelica",
+    },
+    {
+      image: "/gallery/photo3.jpg",
+      alt: "Arvin and Angelica",
+    },
+    {
+      image: "/gallery/photo4.jpg",
+      alt: "Arvin and Angelica",
+    },
+  ],
 } as const;

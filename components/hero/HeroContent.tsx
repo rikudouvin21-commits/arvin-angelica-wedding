@@ -67,15 +67,29 @@ export default function HeroContent() {
           variants={item}
           className="
             mt-6
-            text-5xl
-            md:text-7xl
-            font-semibold
-            leading-tight
-            tracking-normal
-            text-[#2E2B28]
-          "
+            text-6xl
+            md:text-8xl
+            font-light
+            leading-none
+            tracking-wide
+            text-[var(--color-text)]
+        "
         >
-          {wedding.couple.groom} & {wedding.couple.bride}
+          <span className="block">{wedding.couple.groom}</span>
+
+          <span
+            className="
+              my-3
+              block
+              text-3xl
+              font-light
+              text-[var(--color-gold)]
+            "
+          >
+            &
+          </span>
+
+          <span className="block">{wedding.couple.bride}</span>
         </motion.h1>
 
         <motion.div

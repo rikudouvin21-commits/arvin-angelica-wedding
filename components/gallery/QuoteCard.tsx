@@ -5,8 +5,10 @@ export default function QuoteCard() {
         flex
         items-center
         justify-center
-        rounded-3xl
-        bg-white
+        rounded-[var(--radius-large)]
+        border
+        border-[var(--color-border)]
+        bg-[var(--color-paper)]
         p-12
         text-center
         shadow-[var(--shadow-soft)]

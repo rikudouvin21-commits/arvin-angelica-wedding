@@ -4,23 +4,38 @@ import ScrollIndicator from "./ScrollIndicator";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section
+      className="
+        relative
+        flex
+        min-h-screen
+        items-center
+        justify-center
+        overflow-hidden
+        bg-[var(--color-background)]
+      "
+    >
       <HeroBackground />
-      <HeroContent />
+
+      <div className="relative z-10 w-full">
+        <HeroContent />
+      </div>
+
       <ScrollIndicator />
 
       <div
         className="
-            absolute
-            bottom-0
-            left-0
-            h-40
-            w-full
-            bg-gradient-to-b
-            from-transparent
-            to-[#F8F6F2]
+          pointer-events-none
+          absolute
+          bottom-0
+          left-0
+          h-40
+          w-full
+          bg-gradient-to-b
+          from-transparent
+          to-[var(--color-background)]
         "
-        />
+      />
     </section>
   );
 }

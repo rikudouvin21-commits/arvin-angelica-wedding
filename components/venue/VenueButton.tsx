@@ -1,3 +1,7 @@
+"use client";
+
+import { MapPinned } from "lucide-react";
+
 interface VenueButtonProps {
   href: string;
 }
@@ -16,17 +20,21 @@ export default function VenueButton({ href }: VenueButtonProps) {
         rounded-full
         border
         border-[var(--color-border)]
-        px-6
-        py-3
+        px-7
+        py-3.5
         text-sm
         font-medium
         text-[var(--color-gold)]
         transition-all
-        duration-300
+        duration-500
+        ease-out
+        hover:-translate-y-0.5
         hover:bg-[var(--color-gold)]
         hover:text-white
+        hover:shadow-[var(--shadow-soft)]
       "
     >
+      <MapPinned size={18} strokeWidth={1.75} />
       View Location
     </a>
   );

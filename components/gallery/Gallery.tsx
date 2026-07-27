@@ -4,13 +4,13 @@ import GalleryGrid from "./GalleryGrid";
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="bg-[#F8F6F2] py-32 px-6">
-      <div className="mx-auto max-w-7xl">
+    <section id="gallery" className="bg-[var(--color-background)] py-32 px-6">
+      <div className="mx-auto max-w-6xl">
         <FadeIn>
           <SectionTitle
-            eyebrow="Memories"
-            title="Our Gallery"
-            subtitle="Moments that brought us here."
+            eyebrow="Our Journey"
+            title="Moments We Treasure"
+            subtitle="A glimpse into the moments that shaped our journey."
           />
         </FadeIn>
 

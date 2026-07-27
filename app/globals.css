@@ -23,9 +23,28 @@
 
   /* Radius */
   --radius-large: 28px;
+  /* Spacing */
+
+  --section-padding: 120px;
+  --container-width: 1280px;
+
+  /* Transition */
+
+  --transition: all 0.35s ease;
+
+  /* Navbar */
+
+  --navbar-height: 88px;
 }
 
 /* ---------- Luxury Background ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   background: var(--color-background);
@@ -50,4 +69,16 @@ h2,
 h3,
 h4 {
   font-family: var(--font-heading);
+}
+::selection {
+  background: var(--color-gold);
+  color: white;
+}
+
+img {
+  user-select: none;
+}
+
+button {
+  transition: var(--transition);
 }

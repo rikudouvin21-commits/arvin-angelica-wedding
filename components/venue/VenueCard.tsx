@@ -26,16 +26,32 @@ export default function VenueCard({
         border
         border-[var(--color-border)]
         bg-[var(--color-paper)]
-        p-10
+        px-10
+        py-12
         text-center
         shadow-[var(--shadow-soft)]
         transition-all
-        duration-300
-        hover:-translate-y-2
+        duration-500
+        ease-out
+        hover:-translate-y-1
         hover:shadow-[var(--shadow-large)]
       "
     >
-      <div className="flex justify-center text-[var(--color-gold)]">{icon}</div>
+      <div
+        className="
+            mx-auto
+            flex
+            h-20
+            w-20
+            items-center
+            justify-center
+            rounded-full
+            bg-[#FCF7EF]
+            text-[var(--color-gold)]
+        "
+      >
+        {icon}
+      </div>
 
       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.4em] text-[var(--color-gold)]">
         {title}
