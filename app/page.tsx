@@ -7,6 +7,7 @@ import Countdown from "@/components/countdown/Countdown";
 import Gallery from "@/components/gallery/Gallery";
 import Schedule from "@/components/schedule/Schedule";
 import Footer from "@/components/layout/Footer";
+import RSVP from "@/components/rsvp/RSVP";
 
 export default function Home() {
   return (
@@ -21,11 +22,13 @@ export default function Home() {
 
       <Venue />
 
+      <Schedule />
+
       <Countdown />
 
       <Gallery />
 
-      <Schedule />
+      <RSVP />
 
       <Footer />
     </>

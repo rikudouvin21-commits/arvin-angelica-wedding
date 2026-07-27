@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
 :root {
+  /* ==========================================================
+     COLORS
+  ========================================================== */
+
   /* Backgrounds */
   --color-background: #f8f6f2;
   --color-paper: #fcfaf7;
@@ -10,6 +14,8 @@
   /* Brand */
   --color-gold: #c89b47;
   --color-champagne: #eed7ae;
+
+  /* UI */
   --color-border: #e7dac5;
 
   /* Text */
@@ -17,27 +23,47 @@
   --color-text-light: #6d655d;
   --color-white: #ffffff;
 
-  /* Shadows */
+  /* ==========================================================
+     SHADOWS
+  ========================================================== */
+
   --shadow-soft: 0 10px 35px rgba(0, 0, 0, 0.08);
   --shadow-large: 0 30px 80px rgba(0, 0, 0, 0.12);
 
-  /* Radius */
+  /* ==========================================================
+     RADIUS
+  ========================================================== */
+
   --radius-large: 28px;
-  /* Spacing */
+
+  /* ==========================================================
+     LAYOUT
+  ========================================================== */
 
   --section-padding: 120px;
+
   --container-width: 1280px;
 
-  /* Transition */
+  /* Optional for future */
+  --container-narrow: 960px;
 
-  --transition: all 0.35s ease;
-
-  /* Navbar */
+  /* ==========================================================
+     NAVIGATION
+  ========================================================== */
 
   --navbar-height: 88px;
+
+  /* ==========================================================
+     TRANSITIONS
+  ========================================================== */
+
+  --transition: all 0.35s ease;
 }
 
-/* ---------- Luxury Background ---------- */
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
 html {
   scroll-behavior: smooth;
 }
@@ -70,6 +96,7 @@ h3,
 h4 {
   font-family: var(--font-heading);
 }
+
 ::selection {
   background: var(--color-gold);
   color: white;

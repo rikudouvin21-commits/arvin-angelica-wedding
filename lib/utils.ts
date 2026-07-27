@@ -1,5 +1,0 @@
-formatDate();
-
-scrollToSection();
-
-calculateCountdown();

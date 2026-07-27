@@ -1,75 +1,92 @@
-import Link from "next/link";
+import { Heart } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F8F6F2] border-t border-[var(--color-border)]">
-      <div className="mx-auto max-w-6xl px-6 py-20">
-        <div className="text-center">
-          <p
-            className="
-              uppercase
-              tracking-[0.45em]
-              text-sm
-              text-[var(--color-gold)]
-            "
-          >
-            Arvin & Angelica
-          </p>
-
-          <h2
-            className="
-              mt-6
-              text-5xl
-              font-light
-              font-heading
-            "
-          >
-            Thank You
-          </h2>
-
-          <p
-            className="
-              mx-auto
-              mt-8
-              max-w-2xl
-              text-[var(--color-text-light)]
-              leading-8
-            "
-          >
-            Thank you for celebrating one of the most important days of our
-            lives. Your love, support, and presence mean everything to us.
-          </p>
+    <footer
+      className="
+        border-t
+        border-[var(--color-border)]
+        bg-[var(--color-paper)]
+        px-6
+        py-20
+      "
+    >
+      <div className="mx-auto max-w-4xl text-center">
+        <div className="flex justify-center">
+          <Heart
+            size={34}
+            strokeWidth={1.5}
+            className="text-[var(--color-gold)]"
+          />
         </div>
 
-        <div
+        <h2
           className="
-            mt-16
-            flex
-            justify-center
-            gap-10
-            uppercase
-            tracking-[0.25em]
-            text-sm
+            mt-8
+            text-4xl
+            font-light
+            text-[var(--color-text)]
           "
         >
-          <Link href="#story">Story</Link>
-          <Link href="#venue">Venue</Link>
-          <Link href="#gallery">Gallery</Link>
-          <Link href="#schedule">Schedule</Link>
-        </div>
+          We Can't Wait To Celebrate With You
+        </h2>
+
+        <p
+          className="
+            mx-auto
+            mt-6
+            max-w-2xl
+            leading-8
+            text-[var(--color-text-light)]
+          "
+        >
+          Thank you for being part of one of the most meaningful days of our
+          lives. Your love, prayers, and presence mean more to us than words can
+          express.
+        </p>
 
         <div
           className="
-            mt-16
-            text-center
+            mx-auto
+            mt-12
+            h-px
+            w-32
+            bg-[var(--color-border)]
+          "
+        />
+
+        <p
+          className="
+            mt-12
+            text-sm
+            uppercase
+            tracking-[0.45em]
+            text-[var(--color-gold)]
+          "
+        >
+          September 25, 2027
+        </p>
+
+        <h3
+          className="
+            mt-4
+            text-3xl
+            font-light
+            text-[var(--color-text)]
+          "
+        >
+          Arvin & Angelica
+        </h3>
+
+        <p
+          className="
+            mt-12
             text-sm
             text-[var(--color-text-light)]
           "
         >
-          September 25, 2027
-          <br />
-          "Thank you for being part of our forever."
-        </div>
+          Made with ❤️ for our family and friends.
+        </p>
       </div>
     </footer>
   );

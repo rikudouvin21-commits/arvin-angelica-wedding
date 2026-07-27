@@ -16,7 +16,7 @@ export default function SectionTitle({
           uppercase
           tracking-[0.45em]
           text-sm
-          text-[#B88A44]
+          text-[var(--color-gold)]
         "
       >
         {eyebrow}
@@ -28,7 +28,7 @@ export default function SectionTitle({
           text-5xl
           md:text-6xl
           font-extralight
-          text-[#2F2F2F]
+          text-[var(--color-text)]
         "
       >
         {title}
@@ -42,7 +42,7 @@ export default function SectionTitle({
             max-w-2xl
             text-lg
             leading-8
-            text-gray-500
+            text-[var(--color-text-light)]
           "
         >
           {subtitle}
