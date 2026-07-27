@@ -33,7 +33,7 @@ export default function Timeline() {
         />
 
         <div className="space-y-24">
-          {wedding.story.timeline.map((event, index) => (
+          {wedding.timeline.map((event, index) => (
             <TimelineItem
               key={event.date}
               date={event.date}
