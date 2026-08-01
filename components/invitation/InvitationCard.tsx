@@ -5,19 +5,32 @@ import { motion } from "framer-motion";
 interface InvitationCardProps {
   children: React.ReactNode;
   expanded?: boolean;
+  floating?: boolean;
 }
 
 export default function InvitationCard({
   children,
   expanded = false,
+  floating = false,
 }: InvitationCardProps) {
   return (
     <motion.div
-      layout
-      transition={{
-        duration: 0.9,
-        ease: "easeInOut",
-      }}
+      animate={
+        floating
+          ? {
+              y: [0, -8, 0],
+            }
+          : {}
+      }
+      transition={
+        floating
+          ? {
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }
+          : {}
+      }
       className={`
         mx-auto
         w-full
@@ -26,10 +39,8 @@ export default function InvitationCard({
         rounded-[36px]
         border
         border-[var(--color-border)]
-        ring-1
-        ring-white/40
         bg-[var(--color-paper)]
-        shadow-[0_40px_90px_rgba(0,0,0,0.12)]
+        shadow-[var(--shadow-floating)]
 
         ${expanded ? "min-h-[860px]" : "min-h-[720px]"}
       `}

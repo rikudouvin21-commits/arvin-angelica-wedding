@@ -22,7 +22,7 @@ export default function OpeningScreen({ onOpen }: OpeningScreenProps) {
         px-6
       "
     >
-      <InvitationCard>
+      <InvitationCard floating>
         <div
           className="
       px-12

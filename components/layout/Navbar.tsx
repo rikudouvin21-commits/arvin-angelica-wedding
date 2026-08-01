@@ -41,9 +41,9 @@ export default function Navbar() {
         className={`
     pointer-events-auto
     flex
-    h-16
-    w-[92%]
-    max-w-5xl
+    ${scrolled ? "h-14" : "h-16"}
+    w-[90%]
+    max-w-4xl
     items-center
     justify-between
     rounded-full
@@ -56,26 +56,27 @@ export default function Navbar() {
         ? `
           border
           border-[var(--color-border)]
-          bg-white/70
-          backdrop-blur-2xl
-          shadow-[var(--shadow-soft)]
+          bg-[rgba(252,250,247,0.78)]
+          backdrop-blur-xl
+          shadow-[0_18px_60px_rgba(0,0,0,.12)]
         `
         : `
-          bg-transparent
+          border
+        bg-white
+        border-[#E5D2AF]
         `
     }
   `}
       >
         <h1
           className={`
-            text-2xl
-            font-light
-            font-heading
-            tracking-[0.4em]
-            transition-colors
-            duration-500
-            ${scrolled ? "text-[#B88A44]" : "text-white"}
-          `}
+  text-[30px]
+  font-light
+  tracking-[0.22em]
+  transition-colors
+  duration-500
+  ${scrolled ? "text-[#B88A44]" : "text-[var(--color-text)]"}
+`}
         >
           A & A
         </h1>
@@ -99,7 +100,7 @@ export default function Navbar() {
                     ? "text-[#D4B483] font-medium"
                     : scrolled
                       ? "text-gray-700 hover:text-[#D4B483]"
-                      : "text-white hover:text-[#F5D08A]"
+                      : "text-[var(--color-text)] hover:text-[var(--color-gold)]"
                 }
             `}
             >
@@ -107,13 +108,18 @@ export default function Navbar() {
               <span
                 className={`
                     absolute
-                    left-0
+                    left-1/2
                     -bottom-1
                     h-[2px]
                     bg-[#D4B483]
                     transition-all
                     duration-300
-                ${activeSection === link.href.replace("#", "") ? "w-full" : "w-0"}
+
+                ${
+                  activeSection === link.href.replace("#", "")
+                    ? "w-full -translate-x-1/2"
+                    : "w-0 -translate-x-1/2"
+                }
                 `}
               />
             </Link>

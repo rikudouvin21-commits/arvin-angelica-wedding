@@ -36,19 +36,19 @@ export default function HeroContent() {
         initial="hidden"
         animate="show"
         className="
-        mx-auto
-        w-full
-        max-w-xl
-        rounded-[28px]
-        border
-        border-[var(--color-border)]
-        bg-[var(--color-paper)]
-        px-10
-        py-11
-        text-center
-        shadow-[0_30px_80px_rgba(0,0,0,0.12)]
-        backdrop-blur-sm
-      "
+          mx-auto
+          w-full
+          max-w-xl
+          rounded-[28px]
+          border
+          border-[var(--color-border)]
+          bg-[var(--color-paper)]
+          px-10
+          py-11
+          text-center
+          shadow-[0_30px_80px_rgba(0,0,0,0.12)]
+          backdrop-blur-sm
+        "
       >
         <motion.p
           variants={item}
@@ -77,7 +77,7 @@ export default function HeroContent() {
 
           <span
             className="
-              my-3
+              my-6
               block
               text-3xl
               font-light
@@ -104,17 +104,15 @@ export default function HeroContent() {
         <motion.div
           variants={item}
           className="
-    mt-8
-    text-lg
-    leading-8
-    text-[#6D655D]
-  "
+          mt-10
+          text-[18px]
+          leading-9
+          text-[#6D655D]
+        "
         >
           <p>{wedding.hero.invitation}</p>
 
-          <p className="mt-2">{wedding.hero.message}</p>
-
-          <p className="mt-2 italic">{wedding.hero.promise}</p>
+          <p className="mt-3 italic">{wedding.hero.promise}</p>
         </motion.div>
 
         <motion.div
@@ -132,7 +130,7 @@ export default function HeroContent() {
           <p>{wedding.venue.ceremony.address}</p>
         </motion.div>
 
-        <motion.div variants={item}>
+        <motion.div variants={item} className="mt-12">
           <HeroButton />
         </motion.div>
       </motion.div>
