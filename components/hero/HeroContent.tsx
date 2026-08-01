@@ -38,16 +38,16 @@ export default function HeroContent() {
         className="
           mx-auto
           w-full
-          max-w-xl
+          max-w-2xl
           rounded-[28px]
           border
           border-[var(--color-border)]
-          bg-[var(--color-paper)]
+          bg-[rgba(252,250,247,0.88)]
           px-10
           py-11
           text-center
           shadow-[0_30px_80px_rgba(0,0,0,0.12)]
-          backdrop-blur-sm
+          backdrop-blur-md
         "
       >
         <motion.p
@@ -66,18 +66,18 @@ export default function HeroContent() {
         <motion.h1
           variants={item}
           className="
-            text-6xl
-            md:text-[5.8rem]
-            font-light
-            leading-none
-            text-[var(--color-text)]
-          "
+          text-5xl
+          md:text-[5.2rem]
+          font-light
+          leading-[0.95]
+         text-[var(--color-text)]
+        "
         >
           <span className="block">{wedding.couple.groom}</span>
 
           <span
             className="
-              my-6
+              my-2
               block
               text-3xl
               font-light
@@ -94,7 +94,7 @@ export default function HeroContent() {
           variants={item}
           className="
             mx-auto
-            mt-8
+            mt-6
             h-px
             w-24
             bg-[#D9C5A0]
@@ -104,11 +104,11 @@ export default function HeroContent() {
         <motion.div
           variants={item}
           className="
-          mt-10
-          text-[18px]
-          leading-9
+          mt-7
+          text-[17px]
+          leading-8
           text-[#6D655D]
-        "
+          "
         >
           <p>{wedding.hero.invitation}</p>
 
@@ -117,8 +117,8 @@ export default function HeroContent() {
 
         <motion.div
           className="
-            mt-10
-            space-y-2
+            mt-6
+            space-y-1
             text-[#4E4740]
             tracking-wide
             text-base
@@ -130,7 +130,7 @@ export default function HeroContent() {
           <p>{wedding.venue.ceremony.address}</p>
         </motion.div>
 
-        <motion.div variants={item} className="mt-12">
+        <motion.div variants={item} className="mt-9">
           <HeroButton />
         </motion.div>
       </motion.div>
