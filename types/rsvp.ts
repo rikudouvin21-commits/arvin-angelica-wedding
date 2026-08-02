@@ -1,9 +1,9 @@
-import { Guest } from "./guest";
-
-export interface Invitation {
+export type RSVP = {
   id: string;
-  token: string;
-  familyName: string;
-  reservedSeats: number;
-  guests: Guest[];
-}
+
+  guest_id: string;
+
+  response: "accepted" | "declined";
+
+  responded_at: string;
+};

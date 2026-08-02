@@ -1,5 +1,15 @@
-export interface Guest {
+export type Guest = {
   id: string;
-  fullName: string;
-  attending: boolean;
-}
+
+  invitation_id: string;
+
+  full_name: string;
+
+  nickname: string | null;
+
+  display_order: number;
+
+  is_child: boolean;
+
+  created_at: string;
+};

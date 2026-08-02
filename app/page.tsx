@@ -1,40 +1,13 @@
-"use client";
+import { getInvitationByToken } from "@/lib/services/invitation";
 
-import OpeningExperience from "@/components/opening/OpeningExperience";
+export default async function Home() {
+  const invitation = await getInvitationByToken("7QF4KX9MPL2A");
 
-import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/hero/Hero";
-import Story from "@/components/story/Story";
-import Timeline from "@/components/timeline/Timeline";
-import Venue from "@/components/venue/Venue";
-import Schedule from "@/components/schedule/Schedule";
-import Countdown from "@/components/countdown/Countdown";
-import Gallery from "@/components/gallery/Gallery";
-import RSVP from "@/components/rsvp/RSVP";
-import Footer from "@/components/layout/Footer";
+  console.log(invitation);
 
-export default function Home() {
   return (
-    <OpeningExperience>
-      <Navbar />
-
-      <Hero />
-
-      <Story />
-
-      <Timeline />
-
-      <Venue />
-
-      <Schedule />
-
-      <Countdown />
-
-      <Gallery />
-
-      <RSVP />
-
-      <Footer />
-    </OpeningExperience>
+    <main className="p-10">
+      <pre>{JSON.stringify(invitation, null, 2)}</pre>
+    </main>
   );
 }
