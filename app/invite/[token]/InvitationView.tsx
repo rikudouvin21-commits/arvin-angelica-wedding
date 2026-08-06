@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+
 import OpeningScreen from "@/components/invitation/OpeningScreen";
+import GuestSelectionCard from "@/components/invitation/GuestSelectionCard";
 
 import type { Invitation } from "@/types/invitation";
 import type { Guest } from "@/types/guest";
@@ -15,7 +17,15 @@ export default function InvitationView({
   invitation,
   guests,
 }: InvitationViewProps) {
-  const [isOpened, setIsOpened] = useState(false);
+  const [selectedGuests, setSelectedGuests] = useState<string[]>([]);
+
+  function toggleGuest(guestId: string) {
+    setSelectedGuests((current) =>
+      current.includes(guestId)
+        ? current.filter((id) => id !== guestId)
+        : [...current, guestId]
+    );
+  }
 
   if (!isOpened) {
     return (
@@ -36,15 +46,20 @@ export default function InvitationView({
 
         <p className="mt-2">Welcome {invitation.family_name}</p>
         <div className="mt-8">
-          <h2 className="text-xl font-semibold">Invited Guests</h2>
+          <h2 className="text-xl font-semibold text-center">
+            Kindly let us know who will be celebrating with us.
+          </h2>
 
-          <ul className="mt-4 space-y-2">
+          <div className="mt-6 space-y-4">
             {guests.map((guest) => (
-              <li key={guest.id} className="rounded-lg border p-3">
-                {guest.full_name}
-              </li>
+              <GuestSelectionCard
+                key={guest.id}
+                guest={guest}
+                selected={selectedGuests.includes(guest.id)}
+                onToggle={toggleGuest}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </main>
