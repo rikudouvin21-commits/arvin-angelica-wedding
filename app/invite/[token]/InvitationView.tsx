@@ -17,6 +17,7 @@ export default function InvitationView({
   invitation,
   guests,
 }: InvitationViewProps) {
+  const [isOpened, setIsOpened] = useState(false);
   const [selectedGuests, setSelectedGuests] = useState<string[]>([]);
 
   function toggleGuest(guestId: string) {
