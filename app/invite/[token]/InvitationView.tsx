@@ -3,7 +3,16 @@
 import { useState } from "react";
 
 import OpeningScreen from "@/components/invitation/OpeningScreen";
-import GuestSelectionCard from "@/components/invitation/GuestSelectionCard";
+import Navbar from "@/components/layout/Navbar";
+import Hero from "@/components/hero/Hero";
+import Story from "@/components/story/Story";
+import Timeline from "@/components/timeline/Timeline";
+import Venue from "@/components/venue/Venue";
+import Schedule from "@/components/schedule/Schedule";
+import Countdown from "@/components/countdown/Countdown";
+import Gallery from "@/components/gallery/Gallery";
+import RSVP from "@/components/rsvp/RSVP";
+import Footer from "@/components/layout/Footer";
 
 import type { Invitation } from "@/types/invitation";
 import type { Guest } from "@/types/guest";
@@ -18,15 +27,6 @@ export default function InvitationView({
   guests,
 }: InvitationViewProps) {
   const [isOpened, setIsOpened] = useState(false);
-  const [selectedGuests, setSelectedGuests] = useState<string[]>([]);
-
-  function toggleGuest(guestId: string) {
-    setSelectedGuests((current) =>
-      current.includes(guestId)
-        ? current.filter((id) => id !== guestId)
-        : [...current, guestId]
-    );
-  }
 
   if (!isOpened) {
     return (
@@ -39,30 +39,26 @@ export default function InvitationView({
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-5xl font-light">Arvin & Angelica</h1>
+    <main>
+      <Navbar />
 
-        <p className="mt-6">🎉 Invitation opened!</p>
+      <Hero />
 
-        <p className="mt-2">Welcome {invitation.family_name}</p>
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold text-center">
-            Kindly let us know who will be celebrating with us.
-          </h2>
+      <Story />
 
-          <div className="mt-6 space-y-4">
-            {guests.map((guest) => (
-              <GuestSelectionCard
-                key={guest.id}
-                guest={guest}
-                selected={selectedGuests.includes(guest.id)}
-                onToggle={toggleGuest}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
+      <Timeline />
+
+      <Venue />
+
+      <Schedule />
+
+      <Countdown />
+
+      <Gallery />
+
+      <RSVP invitation={invitation} guests={guests} />
+
+      <Footer />
     </main>
   );
 }

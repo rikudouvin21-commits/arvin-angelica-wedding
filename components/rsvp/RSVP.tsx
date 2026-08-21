@@ -1,7 +1,15 @@
 import RSVPHeader from "./RSVPHeader";
 import RSVPCard from "./RSVPCard";
 
-export default function RSVP() {
+import type { Invitation } from "@/types/invitation";
+import type { Guest } from "@/types/guest";
+
+interface RSVPProps {
+  invitation: Invitation;
+  guests: Guest[];
+}
+
+export default function RSVP({ invitation, guests }: RSVPProps) {
   return (
     <section
       id="rsvp"
@@ -9,7 +17,8 @@ export default function RSVP() {
     >
       <div className="mx-auto max-w-5xl">
         <RSVPHeader />
-        <RSVPCard />
+
+        <RSVPCard invitation={invitation} guests={guests} />
       </div>
     </section>
   );

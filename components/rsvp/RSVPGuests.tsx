@@ -1,45 +1,36 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import type { Guest } from "@/types/guest";
 
-const invitedGuests = [
-  "Arvin Dela Cruz",
-  "Angelica Santos",
-  "Matthew Santos",
-  "Sophia Santos",
-];
+interface RSVPGuestsProps {
+  guests: Guest[];
+  selectedGuests: string[];
+  onToggle: (guestId: string) => void;
+}
 
-export default function RSVPGuests() {
-  const [selectedGuests, setSelectedGuests] = useState<string[]>([
-    invitedGuests[0],
-    invitedGuests[1],
-  ]);
-
-  function toggleGuest(name: string) {
-    setSelectedGuests((current) =>
-      current.includes(name)
-        ? current.filter((guest) => guest !== name)
-        : [...current, name]
-    );
-  }
-
+export default function RSVPGuests({
+  guests,
+  selectedGuests,
+  onToggle,
+}: RSVPGuestsProps) {
   return (
-    <div className="space-y-6">
-      <div className="grid gap-5">
-        {invitedGuests.map((guest) => {
-          const checked = selectedGuests.includes(guest);
+    <div className="mt-8">
+      <div className="space-y-4">
+        {guests.map((guest) => {
+          const checked = selectedGuests.includes(guest.id);
 
           return (
             <motion.button
               layout
               whileHover={{ scale: 1.015 }}
               whileTap={{ scale: 0.985 }}
-              key={guest}
+              key={guest.id}
               type="button"
-              onClick={() => toggleGuest(guest)}
+              onClick={() => onToggle(guest.id)}
               className={`
                 relative
+                w-full
                 overflow-hidden
                 rounded-3xl
                 border
@@ -55,7 +46,6 @@ export default function RSVPGuests() {
                 }
               `}
             >
-              {/* Gold Accent */}
               {checked && (
                 <motion.div
                   layoutId="guestAccent"
@@ -79,7 +69,7 @@ export default function RSVPGuests() {
                       text-[var(--color-text)]
                     "
                   >
-                    {guest}
+                    {guest.full_name}
                   </h3>
 
                   <p
@@ -91,7 +81,7 @@ export default function RSVPGuests() {
                       text-[var(--color-text-light)]
                     "
                   >
-                    Reserved Guest
+                    Invited Guest
                   </p>
                 </div>
 
@@ -126,6 +116,16 @@ export default function RSVPGuests() {
             </motion.button>
           );
         })}
+      </div>
+
+      <div className="mt-6 text-center">
+        <p className="text-sm text-[var(--color-text-light)]">
+          Selected:{" "}
+          <span className="font-medium text-[var(--color-text)]">
+            {selectedGuests.length}
+          </span>{" "}
+          {selectedGuests.length === 1 ? "guest" : "guests"}
+        </p>
       </div>
     </div>
   );

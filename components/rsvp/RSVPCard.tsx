@@ -1,6 +1,14 @@
 import RSVPForm from "./RSVPForm";
 
-export default function RSVPCard() {
+import type { Invitation } from "@/types/invitation";
+import type { Guest } from "@/types/guest";
+
+interface RSVPCardProps {
+  invitation: Invitation;
+  guests: Guest[];
+}
+
+export default function RSVPCard({ invitation, guests }: RSVPCardProps) {
   return (
     <div
       className="
@@ -14,7 +22,7 @@ export default function RSVPCard() {
         shadow-[var(--shadow-large)]
       "
     >
-      <RSVPForm />
+      <RSVPForm invitation={invitation} guests={guests} />
     </div>
   );
 }
