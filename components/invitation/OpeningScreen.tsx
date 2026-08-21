@@ -25,21 +25,60 @@ export default function OpeningScreen({
         items-center
         justify-center
         overflow-hidden
-        bg-[#F8F5F1]
-        px-4
-        sm:px-6
+        bg-[#F7F0EB]
+        px-5
+        sm:px-8
       "
-      style={{
-        paddingTop: "max(env(safe-area-inset-top), 0.5rem)",
-        paddingBottom: "max(env(safe-area-inset-bottom), 0.5rem)",
-      }}
     >
+      {/* Decorative background */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          overflow-hidden
+        "
+      >
+        <div
+          className="
+            absolute
+            -left-24
+            -top-24
+            h-72
+            w-72
+            rounded-full
+            bg-[#E8D3C8]
+            opacity-30
+            blur-3xl
+          "
+        />
+
+        <div
+          className="
+            absolute
+            -bottom-24
+            -right-24
+            h-80
+            w-80
+            rounded-full
+            bg-[#D9C1B5]
+            opacity-25
+            blur-3xl
+          "
+        />
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
         className="
+          relative
           flex
+          h-full
           w-full
           max-w-md
           flex-col
@@ -48,80 +87,150 @@ export default function OpeningScreen({
           text-center
         "
       >
-        {/* Header */}
-        <p
+        {/* Top ornament */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            delay: 0.25,
+            duration: 0.8,
+          }}
           className="
-            text-[8px]
+            mb-[clamp(14px,3vh,28px)]
+            text-xl
+            text-[#B59A6A]
+          "
+        >
+          ❦
+        </motion.div>
+
+        {/* Invitation heading */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.35,
+            duration: 0.7,
+          }}
+          className="
             uppercase
-            tracking-[0.22em]
-            text-gray-500
-            sm:text-sm
-            sm:tracking-[0.4em]
+            tracking-[0.28em]
+            text-[clamp(8px,1.5vh,12px)]
+            text-[#8D817A]
           "
         >
           Together with our families
-        </p>
+        </motion.p>
 
-        {/* Names */}
-        <h1
+        {/* Couple */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.9,
+          }}
           className="
-            mt-3
-            text-3xl
-            font-light
-            leading-[0.95]
-            sm:mt-6
-            sm:text-5xl
-            sm:leading-tight
+            mt-[clamp(16px,3vh,28px)]
           "
         >
-          Arvin
-          <br />
-          <span className="text-xl sm:text-3xl">&</span>
-          <br />
-          Angelica
-        </h1>
+          <h1
+            className="
+              font-serif
+              font-light
+              leading-[0.9]
+              tracking-tight
+              text-[#3E3733]
+              text-[clamp(44px,9vh,68px)]
+            "
+          >
+            Arvin
+          </h1>
 
-        {/* Invitation message */}
-        <p
+          <p
+            className="
+              my-[clamp(4px,1vh,10px)]
+              font-serif
+              text-[clamp(22px,4vh,32px)]
+              italic
+              text-[#B59A6A]
+            "
+          >
+            &
+          </p>
+
+          <h1
+            className="
+              font-serif
+              font-light
+              leading-[0.9]
+              tracking-tight
+              text-[#3E3733]
+              text-[clamp(44px,9vh,68px)]
+            "
+          >
+            Angelica
+          </h1>
+        </motion.div>
+
+        {/* Divider */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{
+            delay: 0.8,
+            duration: 0.7,
+          }}
           className="
-            mt-3
-            max-w-[260px]
-            text-[11px]
-            leading-4
-            text-gray-600
-            sm:mt-8
-            sm:max-w-xs
-            sm:text-base
-            sm:leading-6
+            mt-[clamp(16px,3vh,28px)]
+            h-px
+            w-24
+            bg-[#B59A6A]
+          "
+        />
+
+        {/* Date */}
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.9,
+            duration: 0.7,
+          }}
+          className="
+            mt-[clamp(10px,2vh,18px)]
+            uppercase
+            tracking-[0.3em]
+            text-[clamp(9px,1.7vh,13px)]
+            text-[#8D817A]
           "
         >
-          Request the pleasure of your company
-          <br className="hidden sm:block" />
-          as we celebrate our wedding.
-        </p>
+          September 11, 2027
+        </motion.p>
 
         {/* Guest information */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1.05,
+            duration: 0.7,
+          }}
           className="
-            mt-4
+            mt-[clamp(16px,3vh,28px)]
             w-full
-            max-w-[280px]
-            border-t
-            border-b
-            py-3
-            sm:mt-10
-            sm:max-w-md
-            sm:py-6
+            max-w-[290px]
+            border-y
+            border-[#CDBBAE]
+            py-[clamp(10px,2vh,18px)]
           "
         >
           <p
             className="
-              text-[8px]
               uppercase
-              tracking-[0.2em]
-              text-gray-400
-              sm:text-sm
-              sm:tracking-[0.25em]
+              tracking-[0.25em]
+              text-[clamp(7px,1.4vh,11px)]
+              text-[#A09690]
             "
           >
             Dear
@@ -130,10 +239,12 @@ export default function OpeningScreen({
           <h2
             className="
               mt-1
-              text-xl
+              truncate
+              px-2
+              font-serif
               font-light
-              sm:mt-2
-              sm:text-3xl
+              text-[clamp(20px,4vh,30px)]
+              text-[#3E3733]
             "
           >
             {familyName}
@@ -141,11 +252,11 @@ export default function OpeningScreen({
 
           <p
             className="
-              mt-2
-              text-[10px]
-              text-gray-500
-              sm:mt-5
-              sm:text-sm
+              mt-[clamp(6px,1.2vh,12px)]
+              text-[clamp(8px,1.5vh,11px)]
+              uppercase
+              tracking-[0.2em]
+              text-[#A09690]
             "
           >
             Reserved Seats
@@ -153,40 +264,58 @@ export default function OpeningScreen({
 
           <p
             className="
-              text-xl
-              font-semibold
-              sm:text-3xl
+              mt-1
+              font-serif
+              text-[clamp(22px,4vh,30px)]
+              text-[#3E3733]
             "
           >
             {reservedSeats}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Open button */}
-        <button
+        {/* Open invitation */}
+        <motion.button
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1.2,
+            duration: 0.7,
+          }}
+          type="button"
           onClick={onOpen}
           className="
-            mt-4
-            w-full
-            max-w-[280px]
+            mt-[clamp(14px,2.5vh,24px)]
             rounded-full
             border
-            border-black
-            px-6
-            py-2.5
-            text-xs
-            transition
-            hover:bg-black
+            border-[#8F7852]
+            bg-transparent
+            px-8
+            py-[clamp(10px,1.8vh,15px)]
+            text-[clamp(9px,1.7vh,13px)]
+            uppercase
+            tracking-[0.22em]
+            text-[#6F5D42]
+            transition-all
+            duration-300
+            hover:bg-[#8F7852]
             hover:text-white
-            sm:mt-10
-            sm:max-w-md
-            sm:px-8
-            sm:py-4
-            sm:text-base
+            active:scale-95
           "
         >
           Open Invitation
-        </button>
+        </motion.button>
+
+        {/* Bottom ornament */}
+        <div
+          className="
+            mt-[clamp(12px,2vh,20px)]
+            text-sm
+            text-[#B59A6A]
+          "
+        >
+          ✦
+        </div>
       </motion.div>
     </main>
   );
