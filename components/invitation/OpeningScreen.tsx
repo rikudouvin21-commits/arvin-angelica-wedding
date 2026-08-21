@@ -27,6 +27,7 @@ export default function OpeningScreen({
         overflow-hidden
         bg-[#F8F5F1]
         px-4
+        sm:px-6
       "
       style={{
         paddingTop: "max(env(safe-area-inset-top), 0.5rem)",
@@ -43,17 +44,19 @@ export default function OpeningScreen({
           max-w-md
           flex-col
           items-center
+          justify-center
           text-center
         "
       >
         {/* Header */}
         <p
           className="
+            text-[8px]
             uppercase
             tracking-[0.22em]
-            text-[clamp(7px,1.6svh,11px)]
-            leading-none
             text-gray-500
+            sm:text-sm
+            sm:tracking-[0.4em]
           "
         >
           Together with our families
@@ -62,15 +65,18 @@ export default function OpeningScreen({
         {/* Names */}
         <h1
           className="
-            mt-[clamp(8px,1.8svh,18px)]
+            mt-3
+            text-3xl
             font-light
-            leading-[0.9]
-            text-[clamp(30px,7svh,52px)]
+            leading-[0.95]
+            sm:mt-6
+            sm:text-5xl
+            sm:leading-tight
           "
         >
           Arvin
           <br />
-          <span className="text-[clamp(18px,4svh,30px)]">&</span>
+          <span className="text-xl sm:text-3xl">&</span>
           <br />
           Angelica
         </h1>
@@ -78,36 +84,44 @@ export default function OpeningScreen({
         {/* Invitation message */}
         <p
           className="
-            mt-[clamp(8px,1.8svh,18px)]
-            max-w-[280px]
-            text-[clamp(10px,1.9svh,15px)]
-            leading-[1.35]
+            mt-3
+            max-w-[260px]
+            text-[11px]
+            leading-4
             text-gray-600
+            sm:mt-8
+            sm:max-w-xs
+            sm:text-base
+            sm:leading-6
           "
         >
           Request the pleasure of your company
-          <br />
+          <br className="hidden sm:block" />
           as we celebrate our wedding.
         </p>
 
         {/* Guest information */}
         <div
           className="
-            mt-[clamp(10px,2.2svh,22px)]
+            mt-4
             w-full
-            max-w-[290px]
+            max-w-[280px]
             border-t
             border-b
-            py-[clamp(8px,1.8svh,18px)]
+            py-3
+            sm:mt-10
+            sm:max-w-md
+            sm:py-6
           "
         >
           <p
             className="
+              text-[8px]
               uppercase
               tracking-[0.2em]
-              text-[clamp(7px,1.5svh,11px)]
-              leading-none
               text-gray-400
+              sm:text-sm
+              sm:tracking-[0.25em]
             "
           >
             Dear
@@ -115,12 +129,11 @@ export default function OpeningScreen({
 
           <h2
             className="
-              mt-[clamp(3px,0.8svh,8px)]
-              truncate
-              px-2
+              mt-1
+              text-xl
               font-light
-              text-[clamp(18px,4svh,30px)]
-              leading-tight
+              sm:mt-2
+              sm:text-3xl
             "
           >
             {familyName}
@@ -128,9 +141,11 @@ export default function OpeningScreen({
 
           <p
             className="
-              mt-[clamp(5px,1.2svh,12px)]
-              text-[clamp(9px,1.7svh,13px)]
+              mt-2
+              text-[10px]
               text-gray-500
+              sm:mt-5
+              sm:text-sm
             "
           >
             Reserved Seats
@@ -138,34 +153,36 @@ export default function OpeningScreen({
 
           <p
             className="
+              text-xl
               font-semibold
-              text-[clamp(20px,4.5svh,32px)]
-              leading-none
+              sm:text-3xl
             "
           >
             {reservedSeats}
           </p>
         </div>
 
-        {/* Open Invitation */}
+        {/* Open button */}
         <button
-          type="button"
           onClick={onOpen}
           className="
-            mt-[clamp(10px,2.2svh,22px)]
+            mt-4
             w-full
-            max-w-[290px]
+            max-w-[280px]
             rounded-full
             border
             border-black
             px-6
-            py-[clamp(9px,1.8svh,15px)]
-            text-[clamp(10px,1.8svh,15px)]
-            leading-none
+            py-2.5
+            text-xs
             transition
             hover:bg-black
             hover:text-white
-            active:scale-[0.98]
+            sm:mt-10
+            sm:max-w-md
+            sm:px-8
+            sm:py-4
+            sm:text-base
           "
         >
           Open Invitation
