@@ -10,7 +10,6 @@ import Venue from "@/components/venue/Venue";
 import Schedule from "@/components/schedule/Schedule";
 import Countdown from "@/components/countdown/Countdown";
 import Gallery from "@/components/gallery/Gallery";
-import RSVP from "@/components/rsvp/RSVP";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -31,8 +30,6 @@ export default function Home() {
       <Countdown />
 
       <Gallery />
-
-      <RSVP />
 
       <Footer />
     </OpeningExperience>
