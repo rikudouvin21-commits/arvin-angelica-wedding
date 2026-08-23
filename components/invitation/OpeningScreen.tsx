@@ -143,20 +143,19 @@ export default function OpeningScreen({
           relative
           z-10
           w-full
-          max-w-[315px]
-          rounded-[25px]
+          max-w-[345px]
+          rounded-[28px]
           border
           border-[var(--color-border-accent)]
-          bg-[rgba(255,254,252,0.88)]
-          px-6
-          py-8
+          bg-[var(--color-paper)]
+          px-7
+          py-9
           text-center
           shadow-[var(--shadow-floating)]
-          backdrop-blur-md
-          sm:max-w-[378px]
-          sm:rounded-[29px]
-          sm:px-9
-          sm:py-10
+          sm:max-w-[390px]
+          sm:rounded-[30px]
+          sm:px-10
+          sm:py-11
         "
       >
         {/* Top ornament */}
@@ -174,7 +173,7 @@ export default function OpeningScreen({
             duration: 0.6,
           }}
           className="
-            text-base
+            text-lg
             text-[var(--color-dusty-rose)]
           "
         >
@@ -197,7 +196,7 @@ export default function OpeningScreen({
           }}
           className="
             mt-3
-            text-[8px]
+            text-[9px]
             uppercase
             tracking-[0.24em]
             text-[var(--color-text-muted)]
@@ -220,17 +219,17 @@ export default function OpeningScreen({
             delay: 0.4,
             duration: 0.7,
           }}
-          className="mt-5"
+          className="mt-6"
         >
           <h1
             className="
               font-serif
-              text-[40px]
+              text-[48px]
               font-light
               leading-[0.9]
               tracking-tight
               text-[var(--color-text)]
-              sm:text-[48px]
+              sm:text-[52px]
             "
           >
             Arvin
@@ -240,7 +239,7 @@ export default function OpeningScreen({
             className="
               my-2
               font-serif
-              text-xl
+              text-[22px]
               italic
               text-[var(--color-dusty-rose)]
             "
@@ -251,12 +250,12 @@ export default function OpeningScreen({
           <h1
             className="
               font-serif
-              text-[40px]
+              text-[48px]
               font-light
               leading-[0.9]
               tracking-tight
               text-[var(--color-text)]
-              sm:text-[48px]
+              sm:text-[52px]
             "
           >
             Angelica
@@ -279,7 +278,7 @@ export default function OpeningScreen({
           }}
           className="
             mx-auto
-            mt-5
+            mt-6
             flex
             items-center
             justify-center
@@ -289,14 +288,14 @@ export default function OpeningScreen({
           <span
             className="
               h-px
-              w-9
+              w-10
               bg-[var(--color-dusty-rose)]
             "
           />
 
           <span
             className="
-              text-[9px]
+              text-[10px]
               text-[var(--color-dusty-rose)]
             "
           >
@@ -306,7 +305,7 @@ export default function OpeningScreen({
           <span
             className="
               h-px
-              w-9
+              w-10
               bg-[var(--color-dusty-rose)]
             "
           />
@@ -327,8 +326,8 @@ export default function OpeningScreen({
             duration: 0.6,
           }}
           className="
-            mt-3
-            text-[9px]
+            mt-4
+            text-[10px]
             uppercase
             tracking-[0.25em]
             text-[var(--color-text-muted)]
@@ -365,7 +364,7 @@ export default function OpeningScreen({
         >
           <p
             className="
-              text-[7px]
+              text-[8px]
               uppercase
               tracking-[0.22em]
               text-[var(--color-text-faint)]
@@ -380,7 +379,7 @@ export default function OpeningScreen({
               truncate
               px-2
               font-serif
-              text-[21px]
+              text-[22px]
               font-light
               text-[var(--color-text)]
             "
@@ -391,7 +390,7 @@ export default function OpeningScreen({
           <p
             className="
               mt-2
-              text-[7px]
+              text-[8px]
               uppercase
               tracking-[0.18em]
               text-[var(--color-text-faint)]
@@ -404,7 +403,7 @@ export default function OpeningScreen({
             className="
               mt-0.5
               font-serif
-              text-[23px]
+              text-[26px]
               text-[var(--color-text)]
             "
           >
@@ -429,14 +428,14 @@ export default function OpeningScreen({
           type="button"
           onClick={onOpen}
           className="
-            mt-5
+            mt-6
             rounded-full
             border
             border-[var(--color-dusty-rose)]
-            bg-transparent
-            px-6
-            py-2.5
-            text-[9px]
+            bg-[var(--color-paper)]
+            px-7
+            py-3
+            text-[10px]
             uppercase
             tracking-[0.2em]
             text-[var(--color-dusty-rose)]
@@ -454,7 +453,7 @@ export default function OpeningScreen({
         <div
           className="
             mt-3
-            text-[10px]
+            text-[11px]
             text-[var(--color-dusty-rose)]
           "
         >
