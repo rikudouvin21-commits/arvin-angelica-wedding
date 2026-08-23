@@ -8,7 +8,7 @@ const container: Variants = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.25,
+      staggerChildren: 0.22,
     },
   },
 };
@@ -16,13 +16,13 @@ const container: Variants = {
 const item: Variants = {
   hidden: {
     opacity: 0,
-    y: 20,
+    y: 18,
   },
   show: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.1,
+      duration: 1,
       ease: "easeOut",
     },
   },
@@ -30,110 +30,183 @@ const item: Variants = {
 
 export default function HeroContent() {
   return (
-    <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-24">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="
+        relative
+        mx-auto
+        flex
+        w-full
+        max-w-2xl
+        flex-col
+        items-center
+        text-center
+        px-6
+        py-10
+        sm:px-10
+        sm:py-14
+      "
+    >
+      {/* Decorative top ornament */}
       <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
+        variants={item}
         className="
-          mx-auto
-          w-full
-          max-w-2xl
-          rounded-[28px]
-          border
-          border-[var(--color-border)]
-          bg-[rgba(252,250,247,0.88)]
-          px-10
-          py-11
-          text-center
-          shadow-[0_30px_80px_rgba(0,0,0,0.12)]
-          backdrop-blur-md
+          mb-6
+          text-2xl
+          text-[var(--color-dusty-rose)]
+          sm:mb-8
+          sm:text-3xl
         "
       >
-        <motion.p
-          variants={item}
+        ❦
+      </motion.div>
+
+      {/* Initials */}
+      <motion.p
+        variants={item}
+        className="
+          uppercase
+          tracking-[0.6em]
+          text-[10px]
+          font-medium
+          text-[var(--color-dusty-rose-dark)]
+          sm:text-xs
+          sm:tracking-[0.7em]
+        "
+      >
+        A & A
+      </motion.p>
+
+      {/* Couple names */}
+      <motion.h1
+        variants={item}
+        className="
+          mt-6
+          font-serif
+          font-light
+          leading-[0.9]
+          tracking-tight
+          text-[var(--color-text)]
+          text-5xl
+          sm:text-7xl
+          md:text-[5.5rem]
+        "
+      >
+        <span className="block">{wedding.couple.groom}</span>
+
+        <span
           className="
-            uppercase
-            tracking-[0.7em]
-            text-xs
-            font-semibold
-            text-[#C89B47]
+            my-3
+            block
+            font-serif
+            text-3xl
+            italic
+            text-[var(--color-dusty-rose)]
+            sm:my-4
+            sm:text-4xl
           "
         >
-          A & A
-        </motion.p>
+          &
+        </span>
 
-        <motion.h1
-          variants={item}
-          className="
-          text-5xl
-          md:text-[5.2rem]
-          font-light
-          leading-[0.95]
-         text-[var(--color-text)]
+        <span className="block">{wedding.couple.bride}</span>
+      </motion.h1>
+
+      {/* Decorative divider */}
+      <motion.div
+        variants={item}
+        className="
+          mt-8
+          flex
+          items-center
+          gap-4
+          sm:mt-10
         "
-        >
-          <span className="block">{wedding.couple.groom}</span>
-
-          <span
-            className="
-              my-2
-              block
-              text-3xl
-              font-light
-              text-[var(--color-gold)]
-            "
-          >
-            &
-          </span>
-
-          <span className="block">{wedding.couple.bride}</span>
-        </motion.h1>
-
-        <motion.div
-          variants={item}
+      >
+        <span
           className="
-            mx-auto
-            mt-6
             h-px
-            w-24
-            bg-[#D9C5A0]
+            w-12
+            bg-[var(--color-dusty-rose-light)]
+            sm:w-20
           "
         />
 
-        <motion.div
-          variants={item}
+        <span className="text-sm text-[var(--color-dusty-rose)]">✦</span>
+
+        <span
           className="
-          mt-7
-          text-[17px]
-          leading-8
-          text-[#6D655D]
+            h-px
+            w-12
+            bg-[var(--color-dusty-rose-light)]
+            sm:w-20
           "
-        >
-          <p>{wedding.hero.invitation}</p>
-
-          <p className="mt-3 italic">{wedding.hero.promise}</p>
-        </motion.div>
-
-        <motion.div
-          className="
-            mt-6
-            space-y-1
-            text-[#4E4740]
-            tracking-wide
-            text-base
-          "
-        >
-          <p>{wedding.wedding.date}</p>
-          <p>{wedding.wedding.time}</p>
-          <p>{wedding.venue.ceremony.place}</p>
-          <p>{wedding.venue.ceremony.address}</p>
-        </motion.div>
-
-        <motion.div variants={item} className="mt-9">
-          <HeroButton />
-        </motion.div>
+        />
       </motion.div>
-    </div>
+
+      {/* Invitation message */}
+      <motion.div
+        variants={item}
+        className="
+          mt-7
+          max-w-lg
+          text-sm
+          leading-7
+          text-[var(--color-text-light)]
+          sm:mt-9
+          sm:text-base
+          sm:leading-8
+        "
+      >
+        <p>{wedding.hero.invitation}</p>
+
+        <p className="mt-3 italic text-[var(--color-dusty-rose-dark)]">
+          {wedding.hero.promise}
+        </p>
+      </motion.div>
+
+      {/* Wedding details */}
+      <motion.div
+        variants={item}
+        className="
+          mt-7
+          space-y-1
+          text-sm
+          tracking-wide
+          text-[var(--color-text)]
+          sm:mt-9
+          sm:text-base
+        "
+      >
+        <p>{wedding.wedding.date}</p>
+        <p>{wedding.wedding.time}</p>
+
+        <p className="mt-3">{wedding.venue.ceremony.place}</p>
+
+        <p className="text-xs text-[var(--color-text-light)] sm:text-sm">
+          {wedding.venue.ceremony.address}
+        </p>
+      </motion.div>
+
+      {/* Enter story */}
+      <motion.div variants={item} className="mt-8 sm:mt-10">
+        <HeroButton />
+      </motion.div>
+
+      {/* Bottom ornament */}
+      <motion.div
+        variants={item}
+        className="
+          mt-7
+          text-sm
+          text-[var(--color-dusty-rose)]
+          sm:mt-9
+        "
+      >
+        ✦
+      </motion.div>
+    </motion.div>
   );
 }

@@ -1,40 +1,55 @@
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import ScrollIndicator from "./ScrollIndicator";
-import InvitationCard from "@/components/invitation/InvitationCard";
 
 export default function Hero() {
   return (
     <section
+      id="home"
       className="
         relative
         flex
         min-h-screen
+        w-full
         items-center
         justify-center
-        px-6
-        pt-24
-        pb-20
         overflow-hidden
         bg-[var(--color-background)]
       "
     >
+      {/* Full-screen video background */}
       <HeroBackground />
 
-      <div className="relative z-10 flex w-full justify-center">
-        <InvitationCard expanded>
-          <HeroContent />
-        </InvitationCard>
+      {/* Main invitation content */}
+      <div
+        className="
+          relative
+          z-10
+          flex
+          min-h-screen
+          w-full
+          items-center
+          justify-center
+          px-5
+          py-24
+          sm:px-8
+          sm:py-28
+        "
+      >
+        <HeroContent />
       </div>
 
+      {/* Scroll indicator */}
       <ScrollIndicator />
 
+      {/* Bottom fade into the next section */}
       <div
         className="
           pointer-events-none
           absolute
           bottom-0
           left-0
+          z-10
           h-40
           w-full
           bg-gradient-to-b

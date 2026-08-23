@@ -15,12 +15,21 @@
   --color-gold: #b88a44;
   --color-champagne: #eed7ae;
 
+  /* Dusty Rose */
+  --color-dusty-rose: #b98282;
+  --color-dusty-rose-light: #cfa6a6;
+  --color-dusty-rose-dark: #966969;
+  --color-dusty-rose-soft: #d9b8b8;
+
   /* UI */
   --color-border: #ded0ba;
+  --color-border-accent: #cfa6a6;
 
   /* Text */
   --color-text: #2e2b28;
   --color-text-light: #6d655d;
+  --color-text-muted: #8d817a;
+  --color-text-faint: #a09690;
   --color-white: #ffffff;
 
   /* ==========================================================

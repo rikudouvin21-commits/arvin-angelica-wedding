@@ -2,7 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-const sections = ["home", "story", "timeline", "venue", "gallery", "schedule"];
+const sections = [
+  "home",
+  "story",
+  "timeline",
+  "venue",
+  "gallery",
+  "schedule",
+  "rsvp",
+];
 
 export default function useActiveSection() {
   const [activeSection, setActiveSection] = useState("home");

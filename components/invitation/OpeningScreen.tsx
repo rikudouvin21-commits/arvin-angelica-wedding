@@ -25,12 +25,12 @@ export default function OpeningScreen({
         items-center
         justify-center
         overflow-hidden
-        bg-[#F7F0EB]
+        bg-[var(--color-background)]
         px-5
         sm:px-8
       "
     >
-      {/* Decorative background */}
+      {/* Soft background accents */}
       <div
         className="
           pointer-events-none
@@ -42,13 +42,13 @@ export default function OpeningScreen({
         <div
           className="
             absolute
-            -left-24
-            -top-24
+            -left-28
+            -top-28
             h-72
             w-72
             rounded-full
-            bg-[#E8D3C8]
-            opacity-30
+            bg-[var(--color-dusty-rose-soft)]
+            opacity-20
             blur-3xl
           "
         />
@@ -56,17 +56,46 @@ export default function OpeningScreen({
         <div
           className="
             absolute
-            -bottom-24
-            -right-24
+            -bottom-28
+            -right-28
             h-80
             w-80
             rounded-full
-            bg-[#D9C1B5]
-            opacity-25
+            bg-[var(--color-dusty-rose-soft)]
+            opacity-15
             blur-3xl
           "
         />
       </div>
+
+      {/* Decorative frame */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-[10px]
+          border
+          sm:inset-[16px]
+        "
+        style={{
+          borderColor: "var(--color-dusty-rose-light)",
+          opacity: 0.65,
+        }}
+      />
+
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-[15px]
+          border
+          sm:inset-[22px]
+        "
+        style={{
+          borderColor: "var(--color-dusty-rose)",
+          opacity: 0.25,
+        }}
+      />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -98,13 +127,13 @@ export default function OpeningScreen({
           className="
             mb-[clamp(14px,3vh,28px)]
             text-xl
-            text-[#B59A6A]
+            text-[var(--color-dusty-rose)]
           "
         >
           ❦
         </motion.div>
 
-        {/* Invitation heading */}
+        {/* Heading */}
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
@@ -116,7 +145,7 @@ export default function OpeningScreen({
             uppercase
             tracking-[0.28em]
             text-[clamp(8px,1.5vh,12px)]
-            text-[#8D817A]
+            text-[var(--color-text-muted)]
           "
         >
           Together with our families
@@ -140,7 +169,7 @@ export default function OpeningScreen({
               font-light
               leading-[0.9]
               tracking-tight
-              text-[#3E3733]
+              text-[var(--color-text)]
               text-[clamp(44px,9vh,68px)]
             "
           >
@@ -153,7 +182,7 @@ export default function OpeningScreen({
               font-serif
               text-[clamp(22px,4vh,32px)]
               italic
-              text-[#B59A6A]
+              text-[var(--color-dusty-rose)]
             "
           >
             &
@@ -165,7 +194,7 @@ export default function OpeningScreen({
               font-light
               leading-[0.9]
               tracking-tight
-              text-[#3E3733]
+              text-[var(--color-text)]
               text-[clamp(44px,9vh,68px)]
             "
           >
@@ -173,7 +202,7 @@ export default function OpeningScreen({
           </h1>
         </motion.div>
 
-        {/* Divider */}
+        {/* Decorative divider */}
         <motion.div
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
@@ -183,11 +212,36 @@ export default function OpeningScreen({
           }}
           className="
             mt-[clamp(16px,3vh,28px)]
-            h-px
-            w-24
-            bg-[#B59A6A]
+            flex
+            items-center
+            gap-3
           "
-        />
+        >
+          <span
+            className="
+              h-px
+              w-12
+              bg-[var(--color-dusty-rose)]
+            "
+          />
+
+          <span
+            className="
+              text-xs
+              text-[var(--color-dusty-rose)]
+            "
+          >
+            ✦
+          </span>
+
+          <span
+            className="
+              h-px
+              w-12
+              bg-[var(--color-dusty-rose)]
+            "
+          />
+        </motion.div>
 
         {/* Date */}
         <motion.p
@@ -202,10 +256,10 @@ export default function OpeningScreen({
             uppercase
             tracking-[0.3em]
             text-[clamp(9px,1.7vh,13px)]
-            text-[#8D817A]
+            text-[var(--color-text-muted)]
           "
         >
-          September 11, 2027
+          11 · September · 2027
         </motion.p>
 
         {/* Guest information */}
@@ -221,16 +275,18 @@ export default function OpeningScreen({
             w-full
             max-w-[290px]
             border-y
-            border-[#CDBBAE]
             py-[clamp(10px,2vh,18px)]
           "
+          style={{
+            borderColor: "var(--color-dusty-rose-light)",
+          }}
         >
           <p
             className="
               uppercase
               tracking-[0.25em]
               text-[clamp(7px,1.4vh,11px)]
-              text-[#A09690]
+              text-[var(--color-text-faint)]
             "
           >
             Dear
@@ -244,7 +300,7 @@ export default function OpeningScreen({
               font-serif
               font-light
               text-[clamp(20px,4vh,30px)]
-              text-[#3E3733]
+              text-[var(--color-text)]
             "
           >
             {familyName}
@@ -256,7 +312,7 @@ export default function OpeningScreen({
               text-[clamp(8px,1.5vh,11px)]
               uppercase
               tracking-[0.2em]
-              text-[#A09690]
+              text-[var(--color-text-faint)]
             "
           >
             Reserved Seats
@@ -267,14 +323,14 @@ export default function OpeningScreen({
               mt-1
               font-serif
               text-[clamp(22px,4vh,30px)]
-              text-[#3E3733]
+              text-[var(--color-text)]
             "
           >
             {reservedSeats}
           </p>
         </motion.div>
 
-        {/* Open invitation */}
+        {/* Open invitation button */}
         <motion.button
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -288,17 +344,17 @@ export default function OpeningScreen({
             mt-[clamp(14px,2.5vh,24px)]
             rounded-full
             border
-            border-[#8F7852]
+            border-[var(--color-dusty-rose)]
             bg-transparent
             px-8
             py-[clamp(10px,1.8vh,15px)]
             text-[clamp(9px,1.7vh,13px)]
             uppercase
             tracking-[0.22em]
-            text-[#6F5D42]
+            text-[var(--color-dusty-rose)]
             transition-all
             duration-300
-            hover:bg-[#8F7852]
+            hover:bg-[var(--color-dusty-rose)]
             hover:text-white
             active:scale-95
           "
@@ -311,7 +367,7 @@ export default function OpeningScreen({
           className="
             mt-[clamp(12px,2vh,20px)]
             text-sm
-            text-[#B59A6A]
+            text-[var(--color-dusty-rose)]
           "
         >
           ✦
