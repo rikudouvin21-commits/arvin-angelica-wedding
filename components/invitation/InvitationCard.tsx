@@ -18,7 +18,7 @@ export default function InvitationCard({
       animate={
         floating
           ? {
-              y: [0, -8, 0],
+              y: [0, -6, 0],
             }
           : {}
       }
@@ -36,13 +36,19 @@ export default function InvitationCard({
         w-full
         max-w-xl
         overflow-hidden
-        rounded-[36px]
+        rounded-[28px]
         border
         border-[var(--color-border)]
         bg-[var(--color-paper)]
         shadow-[var(--shadow-floating)]
 
-        ${expanded ? "min-h-[860px]" : "min-h-[720px]"}
+        max-h-[calc(100svh-48px)]
+        overflow-y-auto
+
+        sm:rounded-[36px]
+        sm:max-h-none
+
+        ${expanded ? "min-h-[860px]" : ""}
       `}
     >
       {children}

@@ -94,18 +94,18 @@ export default function OpeningScreen({
             ease: "easeOut",
           }}
           className="
-            flex
-            min-h-[min(720px,calc(100svh-32px))]
-            flex-col
-            items-center
-            justify-center
-            px-7
-            py-10
-            text-center
-            sm:min-h-[720px]
-            sm:px-12
-            sm:py-16
-          "
+  flex
+  min-h-0
+  flex-col
+  items-center
+  justify-center
+  px-6
+  py-7
+  text-center
+  sm:min-h-[720px]
+  sm:px-12
+  sm:py-16
+"
         >
           {/* Top ornament */}
           <motion.div
