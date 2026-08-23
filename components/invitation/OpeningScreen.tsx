@@ -25,13 +25,33 @@ export default function OpeningScreen({
         items-center
         justify-center
         overflow-hidden
-        bg-[var(--color-background)]
+        bg-cover
+        bg-center
+        bg-[url('/images/ring%202.jpg')]
         px-5
         sm:px-8
       "
     >
+      {/* Background overlay */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          bg-[rgba(247,244,239,0.38)]
+          backdrop-blur-[1px]
+        "
+      />
+
       {/* Soft background accents */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div
+        className="
+          pointer-events-none
+          absolute
+          inset-0
+          overflow-hidden
+        "
+      >
         <div
           className="
             absolute
@@ -41,7 +61,7 @@ export default function OpeningScreen({
             w-72
             rounded-full
             bg-[var(--color-dusty-rose-soft)]
-            opacity-20
+            opacity-15
             blur-3xl
           "
         />
@@ -67,12 +87,13 @@ export default function OpeningScreen({
           pointer-events-none
           absolute
           inset-[10px]
+          z-20
           border
           sm:inset-[16px]
         "
         style={{
           borderColor: "var(--color-dusty-rose-light)",
-          opacity: 0.65,
+          opacity: 0.75,
         }}
       />
 
@@ -82,12 +103,13 @@ export default function OpeningScreen({
           pointer-events-none
           absolute
           inset-[15px]
+          z-20
           border
           sm:inset-[22px]
         "
         style={{
           borderColor: "var(--color-dusty-rose)",
-          opacity: 0.25,
+          opacity: 0.3,
         }}
       />
 
@@ -121,19 +143,20 @@ export default function OpeningScreen({
           relative
           z-10
           w-full
-          max-w-[300px]
-          rounded-[24px]
+          max-w-[315px]
+          rounded-[25px]
           border
-          border-[var(--color-border)]
-          bg-[var(--color-paper)]
+          border-[var(--color-border-accent)]
+          bg-[rgba(255,254,252,0.88)]
           px-6
-          py-7
+          py-8
           text-center
           shadow-[var(--shadow-floating)]
-          sm:max-w-[360px]
-          sm:rounded-[28px]
-          sm:px-8
-          sm:py-9
+          backdrop-blur-md
+          sm:max-w-[378px]
+          sm:rounded-[29px]
+          sm:px-9
+          sm:py-10
         "
       >
         {/* Top ornament */}
@@ -202,12 +225,12 @@ export default function OpeningScreen({
           <h1
             className="
               font-serif
-              text-[38px]
+              text-[40px]
               font-light
               leading-[0.9]
               tracking-tight
               text-[var(--color-text)]
-              sm:text-[46px]
+              sm:text-[48px]
             "
           >
             Arvin
@@ -228,12 +251,12 @@ export default function OpeningScreen({
           <h1
             className="
               font-serif
-              text-[38px]
+              text-[40px]
               font-light
               leading-[0.9]
               tracking-tight
               text-[var(--color-text)]
-              sm:text-[46px]
+              sm:text-[48px]
             "
           >
             Angelica
@@ -266,7 +289,7 @@ export default function OpeningScreen({
           <span
             className="
               h-px
-              w-8
+              w-9
               bg-[var(--color-dusty-rose)]
             "
           />
@@ -283,7 +306,7 @@ export default function OpeningScreen({
           <span
             className="
               h-px
-              w-8
+              w-9
               bg-[var(--color-dusty-rose)]
             "
           />
@@ -332,7 +355,7 @@ export default function OpeningScreen({
             mx-auto
             mt-5
             w-full
-            max-w-[230px]
+            max-w-[240px]
             border-y
             py-3
           "
@@ -357,7 +380,7 @@ export default function OpeningScreen({
               truncate
               px-2
               font-serif
-              text-[20px]
+              text-[21px]
               font-light
               text-[var(--color-text)]
             "
@@ -381,7 +404,7 @@ export default function OpeningScreen({
             className="
               mt-0.5
               font-serif
-              text-[22px]
+              text-[23px]
               text-[var(--color-text)]
             "
           >
