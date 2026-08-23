@@ -7,13 +7,15 @@ export default function Story() {
     <section
       id="story"
       className="
-        relative
-        overflow-hidden
-        bg-[var(--color-background)]
-        px-6
-        py-28
-        sm:py-32
-      "
+    relative
+    scroll-mt-24
+    overflow-hidden
+    bg-[var(--color-background)]
+    px-6
+    py-28
+    sm:scroll-mt-28
+    sm:py-32
+  "
     >
       {/* Soft decorative atmosphere */}
       <div

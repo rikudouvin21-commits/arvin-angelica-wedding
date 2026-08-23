@@ -106,7 +106,7 @@ Every push to the `main` branch automatically deploys the latest version.
 
 **Wedding Date**
 
-September 25, 2027
+September 11, 2027
 
 ---
 

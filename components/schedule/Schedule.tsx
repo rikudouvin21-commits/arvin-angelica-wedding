@@ -16,7 +16,7 @@ export default function Schedule() {
 
         <div className="mt-20 space-y-8">
           <ScheduleItem
-            time="2:00 PM"
+            time="3:30 PM"
             title="Ceremony"
             description="The celebration begins."
           />

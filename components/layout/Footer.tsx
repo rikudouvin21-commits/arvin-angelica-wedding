@@ -64,7 +64,7 @@ export default function Footer() {
             text-[var(--color-gold)]
           "
         >
-          September 25, 2027
+          September 11, 2027
         </p>
 
         <h3

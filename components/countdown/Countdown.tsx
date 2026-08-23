@@ -46,7 +46,7 @@ export default function Countdown() {
           Our Forever Begins
         </h2>
 
-        <p className="mt-6 text-gray-500">September 25, 2027</p>
+        <p className="mt-6 text-gray-500">September 11, 2027</p>
 
         <div className="mt-20 grid grid-cols-2 gap-12 md:grid-cols-4">
           <CountdownItem value={timeLeft.days} label="Days" />
